@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="heading">
+        <h1>Welcome to Learnify!</h1>
+      </div>
+    <%- include('./partials/sec1.ejs') %>
+    
+    <div class="headingx">
+        <h3>BLOGS</h3>
+    </div>
+
+    <div class="content">
+        <div class="container">
+           
+         
+         <!--check if there is something to display-->
+         <% if(blogs.length>0)  { %>
+            <% blogs.forEach(blog => { %>
+               
+                        <div class="blgs">
+                            <div class="card">
+                                <h5 class="card-header"><%=blog.subcategory %></h5>
+                                <div class="card-body">
+                                  <h5 class="card-title"><%=blog.title %></h5>
+                                  <h6 class="card-subtitle  mb-2    text-warning">- <%= blog.author%></h6>
+                                  <p class="card-text"><%= blog.snippets %></p>
+                                  </div>
+                              </div>
+                            </div>
+
+                      
+                 
+
+        <%    }) %>
+
+        <% } else { %>
+           
+            <h1>There is nothing to display!</h1>
+        
+            <% } %>
+        
+    </div>
+   
+        </div>
+    
+
+
+</body>
+</html>
