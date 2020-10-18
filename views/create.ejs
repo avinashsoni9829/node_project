@@ -1,36 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
- 
-<%- include('./partials/head.ejs') %>
+<head>
+  <%- include('./partials/head.ejs') %>
+    
+    <style> 
+    body,div,h1,h2,form,fieldset,input,textarea,footer,p{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: none;
+
+    }
+
+    body{
+        background:white;
+        color: black;
+        font-family:Tahoma;
+    }
+
+    p{
+        font-size: 24px;
+    }
+    #wrap{
+     width: 530px;
+     margin: 80px auto 0;
+     height: 1000px;
+    }
+    h1
+    {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 35px;
+        font-family: tahoma;
+        color: white;
+
+    }
+
+    #form-wrap
+    {
+        overflow: hidden;
+        height: 447px;
+        position: relative;
+        top: 0px;
+        transition: all 1s ease-in-out .3s;
+    }
+
+    #form-wrap:before{
+        content: "";
+        position: absolute;
+        bottom: 128px;
+        left: 0px;
+        background: url('http://localhost:3000/images/before.png');
+        width: 530px;
+        height: 317px;
+
+    }
+
+    #form-wrap:after
+    {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        background: url('http://localhost:3000/images/after.png');
+        width: 530px;
+        height: 259px;
+         
+    }
+
+    #form-wrap.hide:after,
+    #form-wrap.hide:before{
+        display: none;
+
+    } 
+
+    #form-wrap:hover{
+        height: 777px;
+        top:-200px;
+
+    }
+
+    form{
+        background: rgb(170, 150, 36);
+        position: relative;
+        top: 100px;
+        overflow: hidden;
+        height: 250px;
+        width: 425px;
+        margin: 0px auto;
+        padding: 20px;
+        border: 3px solid white;
+        
+        transition:all 1s ease-in-out .3s ;
+
+    }
+
+    #form-wrap:hover form{
+        height: 530px;
+
+    }
+
+    label{
+        margin: 11px 20px 0 0;
+        font-size: 15px;
+        color: black;
+        text-transform: uppercase;
+
+    }
+
+    input[type=text],textarea{
+        font:14px normal uppercase,arial,serif;
+        color: black;
+        background: none;
+        width: 380px;
+        height: 30px;
+        padding: 0px 10px;
+        margin:0 0 10px 0;
+        border: 1px solid black;
+        border-radius: 5px;
+     }
+
+
+     textarea{
+         height: 80px;
+         padding-top: 14px;
+
+     }
+
+     textarea:focus,
+     input[type=text]:focus{
+         background:white;
+     }
+
+
+     #form-wrap input[type=submit]{
+         position: relative;
+         font-family: tahoma;
+         font-size: 24px;
+         color:black;
+         width: 100%;
+         text-align: center;
+         opacity: 0;
+         background: none;
+         cursor: pointer;
+         
+         border-radius: 3px;
+         transition: opacity 2s ease-in-out 4s ;
+        }
+
+
+        #form-wrap:hover input[type=submit]
+        {
+            z-index: 1;
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out 1.2s;
+
+        }
+
+
+
+    </style>
+    
+</head>
 <body>
-    <%- include('./partials/nav.ejs') %>
+     
+  <%- include('./partials/nav.ejs') %>
+    <div id="wrap">
+      
+        <div id="form-wrap">
+            <form action="/blogs" method="POST">
 
-    <div class="container">
+                <p>Create Blog!</p>
+               
 
-     <form>
-         <label for="Name">Your Name:</label>
-         <input type="text" name="name" id="name" required>
-         <label for="title">Blog Title:</label>
-         <input type="text" name="title" id="title" required>
-         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Subcategory
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Node js</a>
-              <a class="dropdown-item" href="#">Express js</a>
-              <a class="dropdown-item" href="#">Mongo Db</a>
-            </div>
-          </div>
+              
 
-        <script>
-            $('.dropdown-toggle').dropdown()
-        </script>
-     </form>
+                <label for="name">Name:</label>
+                <input type="text" name="title" id="name" value="" required>
+                <label for="name">Title:</label>
+                <input type="text" name="title" id="title" value="">
+                <label for="name">Snippet:</label>
+                <input type="text" name="Snippet" id="snippet" value="">  
+                <label for="text">Blog:</label>
+                <textarea name="message" id="body" cols="30" rows="10" value="your message"></textarea>
+                
+
+                <input type="submit" name="submit" value="create">
+
+            </form>
+        </div>
     </div>
-    
-    
-
     
 </body>
 </html>
