@@ -1,0 +1,45 @@
+.content{
+    margin-top: 150px;
+}
+.blgs
+{
+    margin-top: 20px;
+}
+.headingx{
+    text-align: center;
+    color: lightblue;
+    margin-top: 100px;
+}
+.heading{
+    text-align: center;
+    color: lightblue;
+
+}
+.jumbotron{
+   background-color: black !important;
+}
+
+body{
+    background:black !important;
+}
+.card-header{
+    background:black !important;
+    color: white !important;
+    border-bottom: 3px solid rgb(11, 197, 230) !important;
+    
+}
+.card{
+ border-color: crimson !important;
+ border: 3px solid crimson !important;   
+ background-color: crimson !important;
+}
+
+.card-title{
+    color: white !important;
+}
+.sec1{
+    margin-top: 150px !important;
+}
+
+
+
